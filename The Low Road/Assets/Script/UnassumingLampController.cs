@@ -1,13 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Prime31;
 
 public class UnassumingLampController : MonoBehaviour
 {
     public GameObject player;
     private AnimationController2D _animator;
+    private CharacterController2D _controller;
 
     public Vector3 endPosition = Vector3.zero;
-    public float speed = 1;
+    public float walkSpeed;
+    public float runSpeed;
+    public float gravity;
     public float rovingPauseTime;
     public float playerDetectionDistance;
 
@@ -21,65 +25,71 @@ public class UnassumingLampController : MonoBehaviour
     void Start()
     {
         _animator = gameObject.GetComponent<AnimationController2D>();
+        _controller = gameObject.GetComponent<CharacterController2D>();
 
         startPostion = this.gameObject.transform.position;
         endPosition = endPosition + startPostion;
 
         float distance = Vector3.Distance(startPostion, endPosition);
-        if (distance != 0)
-        {
-            speed = speed / distance;
-        }
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (((player.GetComponent<Transform>().position.x < this.transform.position.x + playerDetectionDistance) && isFacingRight) ||
-            ((player.GetComponent<Transform>().position.x > this.transform.position.x + playerDetectionDistance) && !isFacingRight))
+        Vector3 velocity = _controller.velocity;
+        Vector2 playerPosition = player.GetComponent<Transform>().position;
+
+        velocity.x = 0;
+
+        // Checks the surrounding area for a nearby player, and ensures that the lamp is facing the right 
+        //  way to detect them
+        if (((playerPosition.x < this.transform.position.x + playerDetectionDistance) && isFacingRight) ||
+            ((playerPosition.x > this.transform.position.x + playerDetectionDistance) && !isFacingRight))
         {
             seesPlayer = true;
         }
         else seesPlayer = false;
 
-        timer += Time.deltaTime * speed;
+        //timer += Time.deltaTime * walkSpeed;
 
         if (!seesPlayer)
         {
-            if (timer > rovingPauseTime + 1)
+            if (((this.transform.position.x > endPosition.x) && outgoing) || ((this.transform.position.x < startPostion.x) && !outgoing))
             {
                 outgoing = !outgoing;
-                timer = 0;
+                //timer = 0;
             }
 
-            else if (timer < 1)
-            {
+            //else if (timer < 1)
+            //{
                 if (outgoing)
                 {
                     //_animator.setFacing("Right");
                     //_animator.setAnimation("EnemyWalk");
-                    this.transform.position = Vector3.Lerp(startPostion, endPosition, timer);
+                    velocity.x = walkSpeed;
                 }
                 else
                 {
                     //_animator.setFacing("Left");
                     //_animator.setAnimation("EnemyWalk");
-                    this.transform.position = Vector3.Lerp(endPosition, startPostion, timer);
+                    velocity.x = walkSpeed * -1;
                 }
-            }
+            //}
 
-            //else _animator.setAnimation("EnemyIdle");
+            //else _animator.setAnimation("EnemyIdle");            
         }
 
+        // If the lamp has detected a player
         else
         {
-            Vector3 playerPos = player.GetComponent<Transform>().position;
-            // We don't want the sprite to move vertically, just horizontally.
-            playerPos.y = this.transform.position.y;
-            this.transform.position = Vector3.Lerp(this.transform.position, playerPos, timer);
+            if (playerPosition.x < this.transform.position.x) velocity.x = runSpeed * -1;
+            else velocity.x = runSpeed;
         }
 
+        velocity.y += gravity * Time.deltaTime;
+
+        _controller.move(velocity * Time.deltaTime);
     }
 
     void OnDrawGizmos()
