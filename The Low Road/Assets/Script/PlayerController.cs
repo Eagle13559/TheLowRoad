@@ -44,9 +44,9 @@ public class PlayerController : MonoBehaviour {
         {
             PlayerDeath();
         }
-        else if (col.tag == "LevelWin")
+        else if (col.tag == "Checkpoint")
         {
-            //winPanel.SetActive(true);
+            playerRespawnCoordinate = this.transform.position;
         }
     }
 
