@@ -17,7 +17,7 @@ public class UnassumingLampController : MonoBehaviour
 
     private float timer = 0;
     private Vector3 startPostion = Vector3.zero;
-    private bool outgoing = true;
+    private bool going = true;
     private bool seesPlayer = false;
     private bool isFacingRight = true;
 
@@ -30,7 +30,7 @@ public class UnassumingLampController : MonoBehaviour
         startPostion = this.gameObject.transform.position;
         endPosition = endPosition + startPostion;
 
-        float distance = Vector3.Distance(startPostion, endPosition);
+        //float distance = Vector3.Distance(startPostion, endPosition);
 
     }
 
@@ -44,51 +44,62 @@ public class UnassumingLampController : MonoBehaviour
 
         // Checks the surrounding area for a nearby player, and ensures that the lamp is facing the right 
         //  way to detect them
-        if (((playerPosition.x < this.transform.position.x + playerDetectionDistance) && isFacingRight) ||
-            ((playerPosition.x > this.transform.position.x + playerDetectionDistance) && !isFacingRight))
+        if ((((playerPosition.x < this.transform.position.x + playerDetectionDistance) && (playerPosition.x > this.transform.position.x)) && isFacingRight) ||
+            (((playerPosition.x > this.transform.position.x + playerDetectionDistance) && (playerPosition.x < this.transform.position.x)) && !isFacingRight))
         {
             seesPlayer = true;
         }
         else seesPlayer = false;
 
-        //timer += Time.deltaTime * walkSpeed;
-
         if (!seesPlayer)
         {
-            if (((this.transform.position.x > endPosition.x) && outgoing) || ((this.transform.position.x < startPostion.x) && !outgoing))
+            // If the lamp has reached it's end position, pause before continuing
+            if ((((this.transform.position.x > endPosition.x) && isFacingRight) || ((this.transform.position.x < startPostion.x) && !isFacingRight)) && going)
             {
-                outgoing = !outgoing;
-                //timer = 0;
+                going = false;                
             }
 
-            //else if (timer < 1)
-            //{
-                if (outgoing)
+            // Wait for a brief moment before continuing
+            if (!going)
+            {
+               // _animator.setAnimation("EnemyIdle");
+                timer += Time.deltaTime * walkSpeed;
+                if (timer > rovingPauseTime)
                 {
-                    //_animator.setFacing("Right");
-                    //_animator.setAnimation("EnemyWalk");
-                    velocity.x = walkSpeed;
+                    timer = 0;
+                    going = true;
+                    isFacingRight = !isFacingRight;
                 }
-                else
-                {
-                    //_animator.setFacing("Left");
-                    //_animator.setAnimation("EnemyWalk");
-                    velocity.x = walkSpeed * -1;
-                }
-            //}
+            }
 
-            //else _animator.setAnimation("EnemyIdle");            
+            // If the lamp is moving, move in the direction it's facing
+            else if (isFacingRight)
+            {
+                //_animator.setFacing("Right");
+                //_animator.setAnimation("EnemyWalk");
+                velocity.x = walkSpeed;
+            }
+
+            else
+            {
+                //_animator.setFacing("Left");
+                //_animator.setAnimation("EnemyWalk");
+                velocity.x = walkSpeed * -1;
+            }
         }
 
         // If the lamp has detected a player
         else
         {
+            // Determine which direction to run toward the player
             if (playerPosition.x < this.transform.position.x) velocity.x = runSpeed * -1;
             else velocity.x = runSpeed;
         }
 
+        // Always apply gravity
         velocity.y += gravity * Time.deltaTime;
 
+        // Execute the move
         _controller.move(velocity * Time.deltaTime);
     }
 
