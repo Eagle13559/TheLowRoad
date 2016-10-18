@@ -1,0 +1,493 @@
+fileFormatVersion: 2
+guid: c8017d76a8ff8478c97abdf990cc8810
+timeCreated: 1476762636
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Low Road Kid_0
+    21300002: Low Road Kid_1
+    21300004: Low Road Kid_2
+    21300006: Low Road Kid_3
+    21300008: Low Road Kid_4
+    21300010: Low Road Kid_5
+    21300012: Low Road Kid_6
+    21300014: Low Road Kid_7
+    21300016: Low Road Kid_8
+    21300018: Low Road Kid_9
+    21300020: Low Road Kid_10
+    21300022: Low Road Kid_11
+    21300024: Low Road Kid_12
+    21300026: Low Road Kid_13
+    21300028: Low Road Kid_14
+    21300030: Low Road Kid_15
+    21300032: Low Road Kid_16
+    21300034: Low Road Kid_17
+    21300036: Low Road Kid_18
+    21300038: Low Road Kid_19
+    21300040: Low Road Kid_20
+    21300042: Low Road Kid_21
+    21300044: Low Road Kid_22
+    21300046: Low Road Kid_23
+    21300048: Low Road Kid_24
+    21300050: Low Road Kid_25
+    21300052: Low Road Kid_26
+    21300054: Low Road Kid_27
+    21300056: Low Road Kid_28
+    21300058: Low Road Kid_29
+    21300060: Low Road Kid_30
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Low Road Kid_0
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 2754
+        width: 7
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid_1
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 2171
+        width: 304
+        height: 936
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid_2
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 2752
+        width: 6
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid_3
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 2171
+        width: 304
+        height: 936
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid_4
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 2754
+        width: 5
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid_5
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 2171
+        width: 233
+        height: 944
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid_6
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 2754
+        width: 6
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid_7
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 2171
+        width: 223
+        height: 944
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid_8
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 2716
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid_9
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 2716
+        width: 6
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid_10
+      rect:
+        serializedVersion: 2
+        x: 1079
+        y: 2628
+        width: 6
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid_11
+      rect:
+        serializedVersion: 2
+        x: 1441
+        y: 2628
+        width: 6
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid_12
+      rect:
+        serializedVersion: 2
+        x: 1069
+        y: 2520
+        width: 5
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid_13
+      rect:
+        serializedVersion: 2
+        x: 1431
+        y: 2522
+        width: 5
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid_14
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 2170
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid_15
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 2170
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid_16
+      rect:
+        serializedVersion: 2
+        x: 1258
+        y: 2170
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid_17
+      rect:
+        serializedVersion: 2
+        x: 1619
+        y: 2170
+        width: 8
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid_18
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 2051
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid_19
+      rect:
+        serializedVersion: 2
+        x: 1602
+        y: 1163
+        width: 303
+        height: 912
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid_20
+      rect:
+        serializedVersion: 2
+        x: 1646
+        y: 2068
+        width: 15
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid_21
+      rect:
+        serializedVersion: 2
+        x: 1958
+        y: 1166
+        width: 359
+        height: 909
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid_22
+      rect:
+        serializedVersion: 2
+        x: 2032
+        y: 2068
+        width: 16
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid_23
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 1158
+        width: 359
+        height: 897
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid_24
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 1158
+        width: 359
+        height: 897
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid_25
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 1193
+        width: 377
+        height: 864
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid_26
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 72
+        width: 508
+        height: 941
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid_27
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 65
+        width: 301
+        height: 925
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid_28
+      rect:
+        serializedVersion: 2
+        x: 1166
+        y: 64
+        width: 446
+        height: 949
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid_29
+      rect:
+        serializedVersion: 2
+        x: 1646
+        y: 93
+        width: 402
+        height: 950
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid_30
+      rect:
+        serializedVersion: 2
+        x: 2032
+        y: 89
+        width: 422
+        height: 956
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
