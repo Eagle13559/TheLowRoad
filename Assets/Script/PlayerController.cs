@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour {
     public AudioClip monsterGrowlClose;
 
     public GameObject gameOverPanel;
+    public GameObject levelWinPanel;
 
     private CharacterController2D _controller;
     private AnimationController2D _animator;
@@ -59,14 +60,19 @@ public class PlayerController : MonoBehaviour {
         {
             playerRespawnCoordinate = this.transform.position;
         }
+        else if (col.tag == "LevelWin")
+        {
+            levelWinPanel.SetActive(true);
+            playerControl = false;
+        }
     }
 
     private Vector3 PlayerInputFunction()
     {
         Vector3 velocity = _controller.velocity;
 
-        //if ((_controller.isGrounded) && (_controller.ground != null) && (_controller.ground.tag == "MovingPlatform")) this.transform.parent = _controller.ground.transform;
-        //else if (this.transform.parent != null) this.transform.parent = null;
+        if ((_controller.isGrounded) && (_controller.ground != null) && (_controller.ground.tag == "MovingPlatform")) this.transform.parent = _controller.ground.transform;
+        else if (this.transform.parent != null) this.transform.parent = null;
 
         velocity.x = 0;
 
@@ -88,7 +94,7 @@ public class PlayerController : MonoBehaviour {
 
         else
         {
-            timer += Time.deltaTime;
+            if (playerControl) timer += Time.deltaTime;
             _animator.setAnimation("Player_Idle");
         }
 
