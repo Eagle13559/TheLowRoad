@@ -15,10 +15,18 @@ public class PlayerController : MonoBehaviour {
     public float jumpHeight = 2f;
     public float gravity = -35f;
 
+    public GameObject stalkingMonster;
+    public AudioSource monsterAudioRight;
+    public AudioSource monsterAudioLeft;
+    public AudioClip monsterGrowlFar;
+    public AudioClip monsterGrowlClose;
+
     private CharacterController2D _controller;
     private AnimationController2D _animator;
 
     private bool playerControl = true;
+    private float timer = 0;
+    private bool isFacingRight = true;
 
     void Start()
     {
@@ -64,6 +72,7 @@ public class PlayerController : MonoBehaviour {
             velocity.x = walkSpeed * -1;
             if (_controller.isGrounded) _animator.setAnimation("Player_Walk");
             _animator.setFacing("Left");
+            isFacingRight = false;
         }
 
         else if (Input.GetAxis("Horizontal") > 0)
@@ -71,10 +80,12 @@ public class PlayerController : MonoBehaviour {
             velocity.x = walkSpeed;
             if (_controller.isGrounded) _animator.setAnimation("Player_Walk");
             _animator.setFacing("Right");
+            isFacingRight = true;
         }
 
         else
         {
+            timer += Time.deltaTime;
             _animator.setAnimation("Player_Idle");
         }
 
@@ -83,7 +94,31 @@ public class PlayerController : MonoBehaviour {
             velocity.y = Mathf.Sqrt(2f * jumpHeight * -gravity);
             //_animator.setAnimation("JumpAnimation");
         }
+        if (timer > 20)
+        {
+            if (isFacingRight)
+            {
+                //monsterAudioLeft.PlayOneShot(monsterGrowlClose, 1.0f);
+                GameObject monster = Instantiate(stalkingMonster) as GameObject;
+                monster.transform.position = (new Vector3(this.transform.position.x, this.transform.position.y + 3, this.transform.position.z));
+            }
+            //else monsterAudioRight.PlayOneShot(monsterGrowlClose, 1.0f);
+            timer = 0;
+        }
 
+        else if ((timer > 14) && (timer < 15))
+        {
+            if (isFacingRight) monsterAudioLeft.PlayOneShot(monsterGrowlClose, 0.75f);
+            else monsterAudioRight.PlayOneShot(monsterGrowlClose, 0.75f);
+            timer += 1;
+        }
+
+        else if ((timer > 8) && (timer < 9))
+        {
+            if (isFacingRight) monsterAudioLeft.PlayOneShot(monsterGrowlFar, 0.5f);
+            else monsterAudioRight.PlayOneShot(monsterGrowlFar, 0.5f);
+            timer += 1;         
+        }
         velocity.y += gravity * Time.deltaTime;
 
         return velocity;

@@ -53,6 +53,7 @@
      <Compile Include="Assets\Lighting\LightShafts-master 2\LightShafts.Resources.cs" />
      <Compile Include="Assets\Lighting\LightShafts-master 2\LightShafts.Utils.cs" />
      <Compile Include="Assets\Lighting\LightShafts-master 2\LightShafts.cs" />
+     <Compile Include="Assets\Script\ImmaGetchaController.cs" />
      <Compile Include="Assets\Script\PlayerController.cs" />
      <Compile Include="Assets\Script\Rotato.cs" />
      <Compile Include="Assets\Script\SpooderController.cs" />
@@ -69,7 +70,7 @@
      <None Include="Assets\Shader\Stencil Mask.shader" />
      <None Include="Assets\Lighting\LightShafts-master 2\ColorFilter.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>C:/Users/Justina/Documents/GitHub/TheLowRoad/TheLowRoad/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>C:/Users/Justina/Documents/GitHub/TheLowRoad/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

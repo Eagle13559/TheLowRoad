@@ -4,16 +4,17 @@ using Prime31;
 
 public class UnassumingLampController : MonoBehaviour
 {
-    public GameObject player;
+    private GameObject _player;
     private AnimationController2D _animator;
     private CharacterController2D _controller;
 
     public Vector3 endPosition = Vector3.zero;
     public float walkSpeed;
     public float runSpeed;
-    public float gravity;
+    private float gravity = -35.0f;
     public float rovingPauseTime;
     public float playerDetectionDistance;
+    public float visionMaxHeight;
 
     private float timer = 0;
     private Vector3 startPostion = Vector3.zero;
@@ -24,28 +25,27 @@ public class UnassumingLampController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        _player = GameObject.FindWithTag("Player");
         _animator = gameObject.GetComponent<AnimationController2D>();
         _controller = gameObject.GetComponent<CharacterController2D>();
 
         startPostion = this.gameObject.transform.position;
         endPosition = endPosition + startPostion;
-
-        //float distance = Vector3.Distance(startPostion, endPosition);
-
     }
 
     // Update is called once per frame
     void Update()
     {
         Vector3 velocity = _controller.velocity;
-        Vector2 playerPosition = player.GetComponent<Transform>().position;
+        Vector2 playerPosition = _player.GetComponent<Transform>().position;
 
         velocity.x = 0;
 
         // Checks the surrounding area for a nearby player, and ensures that the lamp is facing the right 
         //  way to detect them
-        if ((((playerPosition.x < this.transform.position.x + playerDetectionDistance) && (playerPosition.x > this.transform.position.x)) && isFacingRight) ||
-            (((playerPosition.x > this.transform.position.x - playerDetectionDistance) && (playerPosition.x < this.transform.position.x)) && !isFacingRight))
+        if ( ((((playerPosition.x < this.transform.position.x + playerDetectionDistance) && (playerPosition.x > this.transform.position.x)) && isFacingRight) ||
+            (((playerPosition.x > this.transform.position.x - playerDetectionDistance) && (playerPosition.x < this.transform.position.x)) && !isFacingRight)) &&
+            ((playerPosition.y < this.transform.position.y + visionMaxHeight) && (playerPosition.y > this.transform.position.y - visionMaxHeight)) )
         {
             seesPlayer = true;
         }
@@ -114,9 +114,13 @@ public class UnassumingLampController : MonoBehaviour
         Gizmos.DrawLine(this.transform.position, endPosition + this.transform.position);
         Gizmos.color = Color.blue;
         Vector3 startViewDistance = this.transform.position;
-        startViewDistance.y += 0.2f;
         Vector3 endViewDistance = startViewDistance;
         endViewDistance.x += playerDetectionDistance;
+        endViewDistance.y += visionMaxHeight;
         Gizmos.DrawLine(startViewDistance, endViewDistance);
+        startViewDistance = endViewDistance;
+        endViewDistance.y -= (2 * visionMaxHeight);
+        Gizmos.DrawLine(startViewDistance, endViewDistance);
+        Gizmos.DrawLine(endViewDistance, this.transform.position);
     }
 }
