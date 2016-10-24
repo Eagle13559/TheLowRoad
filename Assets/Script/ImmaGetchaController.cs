@@ -11,7 +11,6 @@ public class ImmaGetchaController : MonoBehaviour {
     public float runSpeed;
     public float despawnTime;
     public AudioSource monsterAudio;
-    //private AudioClip _monsterRoar;
     private float gravity = -35.0f;
     private float timer = 0;
 
@@ -29,7 +28,6 @@ public class ImmaGetchaController : MonoBehaviour {
         timer += Time.deltaTime;
         if (timer > despawnTime)
         {
-            // monsterAudio.Play();
             Destroy(this.gameObject);            
         }
         Vector3 velocity = _controller.velocity;

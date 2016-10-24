@@ -13,13 +13,15 @@ public class PlayerController : MonoBehaviour {
 
     public float walkSpeed = 5f;
     public float jumpHeight = 2f;
-    public float gravity = -35f;
+    private float gravity = -35f;
 
     public GameObject stalkingMonster;
     public AudioSource monsterAudioRight;
     public AudioSource monsterAudioLeft;
     public AudioClip monsterGrowlFar;
     public AudioClip monsterGrowlClose;
+
+    public GameObject gameOverPanel;
 
     private CharacterController2D _controller;
     private AnimationController2D _animator;
@@ -46,6 +48,7 @@ public class PlayerController : MonoBehaviour {
     {
         if (col.tag == "KillZ")
         {
+            gameCamera.GetComponent<CameraFollow2D>().stopCameraFollow();
             PlayerDeath();
         }
         else if (col.tag == "EvilDoer")
@@ -96,13 +99,9 @@ public class PlayerController : MonoBehaviour {
         }
         if (timer > 20)
         {
-            if (isFacingRight)
-            {
-                //monsterAudioLeft.PlayOneShot(monsterGrowlClose, 1.0f);
-                GameObject monster = Instantiate(stalkingMonster) as GameObject;
-                monster.transform.position = (new Vector3(this.transform.position.x, this.transform.position.y + 3, this.transform.position.z));
-            }
-            //else monsterAudioRight.PlayOneShot(monsterGrowlClose, 1.0f);
+            GameObject monster = Instantiate(stalkingMonster) as GameObject;
+            if (isFacingRight) monster.transform.position = (new Vector3(this.transform.position.x-5, this.transform.position.y + 10, this.transform.position.z));
+            else monster.transform.position = (new Vector3(this.transform.position.x+5, this.transform.position.y + 10, this.transform.position.z));
             timer = 0;
         }
 
@@ -126,15 +125,16 @@ public class PlayerController : MonoBehaviour {
 
     private void PlayerDeath()
     {
-        // THIS METHOD IS WHERE SOME KIND OF GAME OVER MENU SHOULD BE CALLED AND THE DEATH ANIMATION WILL PLAY
-        //playerControl = false;
+        playerControl = false;
         //_animator.setAnimation("DeathAnimation");
-        //gameOverPanel.SetActive(true);
-        PlayerRespawn();
+        gameOverPanel.SetActive(true);
     }
 
-    private void PlayerRespawn()
+    public void PlayerRespawn()
     {
+        playerControl = true;
+        gameOverPanel.SetActive(false);
+        gameCamera.GetComponent<CameraFollow2D>().startCameraFollow(this.gameObject);
         _controller.transform.position = playerRespawnCoordinate;
     }
 }

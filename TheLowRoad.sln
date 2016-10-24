@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2008
+
+Project("{4D1DD573-38C7-B0C4-4244-8AA236DFE91B}") = "TheLowRoad", "Assembly-CSharp-firstpass.csproj", "{BDA6B44A-07BF-736F-6191-D06F4BDFEE46}"
+EndProject
+Project("{4D1DD573-38C7-B0C4-4244-8AA236DFE91B}") = "TheLowRoad", "Assembly-CSharp.csproj", "{B13C2020-54CF-2A05-A96D-A8A620FCBC2D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BDA6B44A-07BF-736F-6191-D06F4BDFEE46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDA6B44A-07BF-736F-6191-D06F4BDFEE46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDA6B44A-07BF-736F-6191-D06F4BDFEE46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDA6B44A-07BF-736F-6191-D06F4BDFEE46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B13C2020-54CF-2A05-A96D-A8A620FCBC2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B13C2020-54CF-2A05-A96D-A8A620FCBC2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B13C2020-54CF-2A05-A96D-A8A620FCBC2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B13C2020-54CF-2A05-A96D-A8A620FCBC2D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
