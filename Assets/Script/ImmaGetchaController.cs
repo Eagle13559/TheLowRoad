@@ -26,7 +26,7 @@ public class ImmaGetchaController : MonoBehaviour {
 	void Update () {
         
         timer += Time.deltaTime;
-        if (timer > despawnTime)
+        if (timer > despawnTime || (!_player.GetComponent<PlayerController>().getIsAlive()))
         {
             Destroy(this.gameObject);            
         }
@@ -37,12 +37,12 @@ public class ImmaGetchaController : MonoBehaviour {
 
         if (_controller.isGrounded)
         {
-            if (playerPosition.x < this.transform.position.x)
+            if (playerPosition.x < this.transform.position.x - 1)
             {
                 velocity.x = runSpeed * -1;
                 //_animator.setFacing("Left");
             }
-            else
+            else if (playerPosition.x > this.transform.position.x + 1)
             {
                 velocity.x = runSpeed;
                 //_animator.setFacing("Right");

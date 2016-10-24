@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour {
     private bool playerControl = true;
     private float timer = 0;
     private bool isFacingRight = true;
+    private bool isAlive = true;
 
     void Start()
     {
@@ -134,13 +135,20 @@ public class PlayerController : MonoBehaviour {
         playerControl = false;
         //_animator.setAnimation("DeathAnimation");
         gameOverPanel.SetActive(true);
+        isAlive = false;
     }
 
     public void PlayerRespawn()
     {
         playerControl = true;
+        isAlive = true;
         gameOverPanel.SetActive(false);
         gameCamera.GetComponent<CameraFollow2D>().startCameraFollow(this.gameObject);
         _controller.transform.position = playerRespawnCoordinate;
+    }
+
+    public bool getIsAlive()
+    {
+        return isAlive;
     }
 }
