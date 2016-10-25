@@ -5,9 +5,10 @@ public class GameManager : MonoBehaviour {
 
     public PlayerController player;
     public GameObject instructionsPanel;
+    public GameObject narrativePanel;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 	
 	}
 	
@@ -44,5 +45,15 @@ public class GameManager : MonoBehaviour {
     public void hideInstructions()
     {
         instructionsPanel.SetActive(false);
+    }
+
+    public void showNarrative()
+    {
+        narrativePanel.SetActive(true);
+    }
+
+    public void hideNarrative()
+    {
+        narrativePanel.SetActive(false);
     }
 }
