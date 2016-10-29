@@ -15,3 +15,20 @@
 /Users/christopherreay/Downloads/TheLowRoad-master 3/The Low Road/Temp/bin/Debug/Unity.CecilTools.dll
 /Users/christopherreay/Downloads/TheLowRoad-master 3/The Low Road/Temp/bin/Debug/Mono.Cecil.Pdb.dll
 /Users/christopherreay/Downloads/TheLowRoad-master 3/The Low Road/Temp/bin/Debug/Mono.Cecil.Mdb.dll
+/Users/christopherreay/TheLowRoad/Temp/bin/Debug/Assembly-CSharp-firstpass.dll.mdb
+/Users/christopherreay/TheLowRoad/Temp/bin/Debug/Assembly-CSharp-firstpass.dll
+/Users/christopherreay/TheLowRoad/obj/Debug/Assembly-CSharp-firstpass.dll
+/Users/christopherreay/TheLowRoad/obj/Debug/Assembly-CSharp-firstpass.dll.mdb
+/Users/christopherreay/TheLowRoad/Temp/bin/Debug/UnityEngine.dll
+/Users/christopherreay/TheLowRoad/Temp/bin/Debug/UnityEditor.dll
+/Users/christopherreay/TheLowRoad/Temp/bin/Debug/UnityEngine.Networking.dll
+/Users/christopherreay/TheLowRoad/Temp/bin/Debug/UnityEngine.UI.dll
+/Users/christopherreay/TheLowRoad/Temp/bin/Debug/Mono.Cecil.dll
+/Users/christopherreay/TheLowRoad/Temp/bin/Debug/Unity.SerializationLogic.dll
+/Users/christopherreay/TheLowRoad/Temp/bin/Debug/Unity.DataContract.dll
+/Users/christopherreay/TheLowRoad/Temp/bin/Debug/ICSharpCode.NRefactory.dll
+/Users/christopherreay/TheLowRoad/Temp/bin/Debug/Unity.UNetWeaver.dll
+/Users/christopherreay/TheLowRoad/Temp/bin/Debug/Unity.UNetWeaver.dll.mdb
+/Users/christopherreay/TheLowRoad/Temp/bin/Debug/Unity.CecilTools.dll
+/Users/christopherreay/TheLowRoad/Temp/bin/Debug/Mono.Cecil.Pdb.dll
+/Users/christopherreay/TheLowRoad/Temp/bin/Debug/Mono.Cecil.Mdb.dll
