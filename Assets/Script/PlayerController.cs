@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour {
     private float timer = 0;
     private bool isFacingRight = true;
     private bool isAlive = true;
+    private bool playerAtCheckpoint = false;
 
     void Start()
     {
@@ -38,12 +39,36 @@ public class PlayerController : MonoBehaviour {
         _animator = gameObject.GetComponent<AnimationController2D>();
 
         gameCamera.GetComponent<CameraFollow2D>().startCameraFollow(this.gameObject);
+        //UnityEngine.Cursor.visible = true;
+        UnityEngine.Cursor.visible = false;
     }
 
     void Update()
     {
         if (!playerControl) return;
         _controller.move(PlayerInputFunction() * Time.deltaTime);
+
+        if (timer > 20)
+        {
+            GameObject monster = Instantiate(stalkingMonster) as GameObject;
+            if (isFacingRight) monster.transform.position = (new Vector3(this.transform.position.x - 5, this.transform.position.y + 10, this.transform.position.z));
+            else monster.transform.position = (new Vector3(this.transform.position.x + 5, this.transform.position.y + 10, this.transform.position.z));
+            timer = 0;
+        }
+
+        else if ((timer > 14) && (timer < 15))
+        {
+            if (isFacingRight) monsterAudioLeft.PlayOneShot(monsterGrowlClose, 0.75f);
+            else monsterAudioRight.PlayOneShot(monsterGrowlClose, 0.75f);
+            timer += 1;
+        }
+
+        else if ((timer > 8) && (timer < 9))
+        {
+            if (isFacingRight) monsterAudioLeft.PlayOneShot(monsterGrowlFar, 0.5f);
+            else monsterAudioRight.PlayOneShot(monsterGrowlFar, 0.5f);
+            timer += 1;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)
@@ -60,11 +85,22 @@ public class PlayerController : MonoBehaviour {
         else if (col.tag == "Checkpoint")
         {
             playerRespawnCoordinate = this.transform.position;
+            playerRespawnCoordinate.x += 0.4f;
+            playerAtCheckpoint = true;
         }
         else if (col.tag == "LevelWin")
         {
             levelWinPanel.SetActive(true);
+            UnityEngine.Cursor.visible = true;
             playerControl = false;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D col)
+    {
+        if (col.tag == "Checkpoint")
+        {
+            playerAtCheckpoint = false;
         }
     }
 
@@ -95,7 +131,7 @@ public class PlayerController : MonoBehaviour {
 
         else
         {
-            if (playerControl) timer += Time.deltaTime;
+            if ((playerControl) && (!playerAtCheckpoint)) timer += Time.deltaTime;
             _animator.setAnimation("Player_Idle");
         }
 
@@ -104,27 +140,7 @@ public class PlayerController : MonoBehaviour {
             velocity.y = Mathf.Sqrt(2f * jumpHeight * -gravity);
             //_animator.setAnimation("JumpAnimation");
         }
-        if (timer > 20)
-        {
-            GameObject monster = Instantiate(stalkingMonster) as GameObject;
-            if (isFacingRight) monster.transform.position = (new Vector3(this.transform.position.x-5, this.transform.position.y + 10, this.transform.position.z));
-            else monster.transform.position = (new Vector3(this.transform.position.x+5, this.transform.position.y + 10, this.transform.position.z));
-            timer = 0;
-        }
-
-        else if ((timer > 14) && (timer < 15))
-        {
-            if (isFacingRight) monsterAudioLeft.PlayOneShot(monsterGrowlClose, 0.75f);
-            else monsterAudioRight.PlayOneShot(monsterGrowlClose, 0.75f);
-            timer += 1;
-        }
-
-        else if ((timer > 8) && (timer < 9))
-        {
-            if (isFacingRight) monsterAudioLeft.PlayOneShot(monsterGrowlFar, 0.5f);
-            else monsterAudioRight.PlayOneShot(monsterGrowlFar, 0.5f);
-            timer += 1;         
-        }
+        
         velocity.y += gravity * Time.deltaTime;
 
         return velocity;
@@ -135,6 +151,7 @@ public class PlayerController : MonoBehaviour {
         playerControl = false;
         //_animator.setAnimation("DeathAnimation");
         gameOverPanel.SetActive(true);
+        UnityEngine.Cursor.visible = true;
         isAlive = false;
     }
 
@@ -143,6 +160,7 @@ public class PlayerController : MonoBehaviour {
         playerControl = true;
         isAlive = true;
         gameOverPanel.SetActive(false);
+        UnityEngine.Cursor.visible = false;
         gameCamera.GetComponent<CameraFollow2D>().startCameraFollow(this.gameObject);
         _controller.transform.position = playerRespawnCoordinate;
     }
