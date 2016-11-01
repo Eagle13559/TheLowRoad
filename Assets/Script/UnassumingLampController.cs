@@ -62,7 +62,7 @@ public class UnassumingLampController : MonoBehaviour
             // Wait for a brief moment before continuing
             if (!going)
             {
-               // _animator.setAnimation("EnemyIdle");
+                 _animator.setAnimation("Lamp_Idle");
                 timer += Time.deltaTime * walkSpeed;
                 if (timer > rovingPauseTime)
                 {
@@ -76,14 +76,14 @@ public class UnassumingLampController : MonoBehaviour
             else if (isFacingRight)
             {
                 _animator.setFacing("Right");
-                //_animator.setAnimation("EnemyWalk");
+                _animator.setAnimation("Lamp_Walk");
                 velocity.x = walkSpeed;
             }
 
             else
             {
                 _animator.setFacing("Left");
-                //_animator.setAnimation("EnemyWalk");
+                _animator.setAnimation("Lamp_Walk");
                 velocity.x = walkSpeed * -1;
             }
         }
@@ -95,10 +95,12 @@ public class UnassumingLampController : MonoBehaviour
 			if (playerPosition.x < this.transform.position.x) {
 				velocity.x = runSpeed * -1;
 				_animator.setFacing ("Left");
-			} else {
+                _animator.setAnimation("Lamp_Run");
+            } else {
 				velocity.x = runSpeed;
 				_animator.setFacing ("Right");
-			}
+                _animator.setAnimation("Lamp_Run");
+            }
         }
 
         // Always apply gravity
