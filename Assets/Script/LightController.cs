@@ -5,10 +5,13 @@ using Prime31;
 public class LightController : MonoBehaviour {
 
     private CharacterController2D _controller;
+    private AnimationController2D _animator;
 
     // Use this for initialization
     void Start () {
         _controller = gameObject.GetComponent<CharacterController2D>();
+        _animator = gameObject.GetComponent<AnimationController2D>();
+        _animator.setAnimation("Butthole");
     }
 
     // Update is called once per frame

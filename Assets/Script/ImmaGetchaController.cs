@@ -39,14 +39,17 @@ public class ImmaGetchaController : MonoBehaviour {
         {
             if (playerPosition.x < this.transform.position.x - 1)
             {
-                velocity.x = runSpeed * -1;
-                //_animator.setFacing("Left");
+                velocity.x = runSpeed * -1;               
+                _animator.setFacing("Right");
+                _animator.setAnimation("Spooder_Walk");
             }
             else if (playerPosition.x > this.transform.position.x + 1)
             {
                 velocity.x = runSpeed;
-                //_animator.setFacing("Right");
+                _animator.setFacing("Left");
+                _animator.setAnimation("Spooder_Walk");
             }
+            else _animator.setAnimation("Spooder_Idle");
         }
 
         // Apply gravity

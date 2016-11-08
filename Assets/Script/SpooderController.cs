@@ -43,19 +43,19 @@ public class SpooderController : MonoBehaviour {
         {            
             if (outgoing)
             {
-                //_animator.setFacing("Left");
-                //_animator.setAnimation("EnemyWalk");
+                _animator.setFacing("Left");
+                _animator.setAnimation("Spooder_Walk");
                 this.transform.position = Vector3.Lerp(startPostion, endPosition, timer);
             }
             else
             {
-                //_animator.setFacing("Right");
-                //_animator.setAnimation("EnemyWalk");
+                _animator.setFacing("Right");
+                _animator.setAnimation("Spooder_Walk");
                 this.transform.position = Vector3.Lerp(endPosition, startPostion, timer);
             }
         }
 
-        //else _animator.setAnimation("EnemyIdle");
+        else _animator.setAnimation("Spooder_Idle");
 
     }
 
