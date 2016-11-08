@@ -24,16 +24,16 @@ public class LightController : MonoBehaviour {
         {
             direction = direction.normalized;
         }
-        if (velocity.magnitude > 1)
-        {
-            velocity = velocity.normalized;
-        }
+        //if (velocity.magnitude > 1)
+        //{
+            //velocity = velocity.normalized;
+        //}
         //velocity.x *= velocity.x;
         //velocity.y *= velocity.y;        
         //if (velocity.x > 2) velocity.x = 2;
         //else if (velocity.x < -2) velocity.x = -2;
         //if (velocity.y > 2) velocity.y = 2;
-        direction.x += velocity.x;
-        _controller.move(direction * Time.deltaTime * 5);
+        //direction.x += velocity.x;
+        _controller.move(direction/* * Time.deltaTime*/);
     }
 }
