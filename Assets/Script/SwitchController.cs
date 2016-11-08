@@ -4,30 +4,33 @@ using System.Collections;
 public class SwitchController : MonoBehaviour {
 
     public Light light;
-    public GameObject objectToDissolveOnTrigger;
+    public GameObject platformToMoveOnTrigger;
 
-    private bool isTriggered = false;
-    private bool isAlive = true;
-    private SpriteRenderer objectToDissolveOnTriggerSprite;
+    //private bool isTriggered = false;
+    //private bool isAlive = true;
+    //private SpriteRenderer objectToDissolveOnTriggerSprite;
+    private MovingPlatform platform;
 
 	// Use this for initialization
 	void Start () {
-        objectToDissolveOnTriggerSprite = objectToDissolveOnTrigger.GetComponent<SpriteRenderer>();
+        //objectToDissolveOnTriggerSprite = objectToDissolveOnTrigger.GetComponent<SpriteRenderer>();
+        platform = platformToMoveOnTrigger.GetComponent<MovingPlatform>();
+        platform.moving = false;
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (isAlive && isTriggered)
-        {
-            Color spriteColor = objectToDissolveOnTriggerSprite.color;
-            spriteColor.a -= 1.0f * Time.deltaTime;
-            objectToDissolveOnTriggerSprite.color = spriteColor;
-            if (spriteColor.a <= 0)
-            {
-                Destroy(objectToDissolveOnTrigger);
-                isAlive = false;
-            }
-        }
+        //if (isTriggered)
+        //{
+            //Color spriteColor = objectToDissolveOnTriggerSprite.color;
+            //spriteColor.a -= 1.0f * Time.deltaTime;
+            //objectToDissolveOnTriggerSprite.color = spriteColor;
+            //if (spriteColor.a <= 0)
+            //{
+                //Destroy(objectToDissolveOnTrigger);
+                //isAlive = false;
+            //}
+        //}
 	    
 	}
 
@@ -36,7 +39,8 @@ public class SwitchController : MonoBehaviour {
         if (col.tag == "Firefly")
         {
             light.color = Color.green;
-            isTriggered = true;
+            //isTriggered = true;
+            platform.moving = true;
         }
     }
 }

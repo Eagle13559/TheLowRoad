@@ -9,6 +9,7 @@ public class MovingPlatform : MonoBehaviour {
     private float timer = 0;
     private Vector3 startPostion = Vector3.zero;
     private bool outgoing = true;
+    public bool moving = true;
 
 	// Use this for initialization
 	void Start () {
@@ -24,6 +25,7 @@ public class MovingPlatform : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (!moving) return;
         timer += Time.deltaTime * speed;
         if (outgoing) this.transform.position = Vector3.Lerp(startPostion, endPosition, timer);            
         else this.transform.position = Vector3.Lerp(endPosition, startPostion, timer);
