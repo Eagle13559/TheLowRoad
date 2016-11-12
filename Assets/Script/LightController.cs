@@ -11,7 +11,7 @@ public class LightController : MonoBehaviour {
     void Start () {
         _controller = gameObject.GetComponent<CharacterController2D>();
         _animator = gameObject.GetComponent<AnimationController2D>();
-        _animator.setAnimation("Butthole");
+        _animator.setAnimation("firefly_fly");
     }
 
     // Update is called once per frame
