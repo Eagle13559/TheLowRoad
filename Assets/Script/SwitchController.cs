@@ -5,17 +5,21 @@ public class SwitchController : MonoBehaviour {
 
     public Light light;
     public GameObject platformToMoveOnTrigger;
+    public GameObject platformToMoveOnTrigger2;
 
     //private bool isTriggered = false;
     //private bool isAlive = true;
     //private SpriteRenderer objectToDissolveOnTriggerSprite;
     private MovingPlatform platform;
+    private MovingPlatform platform2 = null;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         //objectToDissolveOnTriggerSprite = objectToDissolveOnTrigger.GetComponent<SpriteRenderer>();
         platform = platformToMoveOnTrigger.GetComponent<MovingPlatform>();
         platform.moving = false;
+        platform2 = platformToMoveOnTrigger2.GetComponent<MovingPlatform>();
+        platform2.moving = false;
     }
 	
 	// Update is called once per frame
@@ -41,6 +45,7 @@ public class SwitchController : MonoBehaviour {
             light.color = Color.green;
             //isTriggered = true;
             platform.moving = true;
+            platform2.moving = true;
         }
     }
 }
