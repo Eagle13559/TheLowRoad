@@ -1,22 +1,10 @@
 Base path: /Applications/Unity/Unity.app/Contents
 Cmd: getPlatforms
-Cmd: preprocess
-  insize=2840 outsize=191 ok=1
-Cmd: preprocess
-  insize=836 outsize=215 ok=1
-Cmd: preprocess
-  insize=1040 outsize=1322 ok=1
-Cmd: preprocess
-  insize=6527 outsize=273 ok=1
-Cmd: preprocess
-  insize=552 outsize=184 ok=1
-Cmd: preprocess
-  insize=645 outsize=200 ok=1
-Cmd: preprocess
-  insize=2811 outsize=533 ok=1
-Cmd: preprocess
-  insize=4108 outsize=215 ok=1
-Cmd: preprocess
-  insize=1170 outsize=188 ok=1
-Cmd: preprocess
-  insize=1087 outsize=1371 ok=1
+Cmd: compileSnippet
+  api=15 type=0 insize=17260 outsize=3738 kw=POINT pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING SHADER_API_DESKTOP ok=1
+Cmd: compileSnippet
+  api=15 type=1 insize=17260 outsize=0 kw=POINT pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING SHADER_API_DESKTOP ok=1
+Cmd: compileSnippet
+  api=15 type=0 insize=17260 outsize=4051 kw=SPOT pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING SHADER_API_DESKTOP ok=1
+Cmd: compileSnippet
+  api=15 type=1 insize=17260 outsize=0 kw=SPOT pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING SHADER_API_DESKTOP ok=1
