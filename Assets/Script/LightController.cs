@@ -6,19 +6,21 @@ public class LightController : MonoBehaviour {
 
     private CharacterController2D _controller;
     private AnimationController2D _animator;
+    private BoxCollider2D _collider;
 
     // Use this for initialization
     void Start () {
         _controller = gameObject.GetComponent<CharacterController2D>();
         _animator = gameObject.GetComponent<AnimationController2D>();
+        _collider = gameObject.GetComponent<BoxCollider2D>();
         _animator.setAnimation("firefly_fly");
     }
 
     // Update is called once per frame
     void Update() {
-        //Vector3 temp = Input.mousePosition;
-        //temp.z = 10f; // Set this to be the distance you want the object to be placed in front of the camera.
-        //this.transform.position = Camera.main.ScreenToWorldPoint(temp);
+        Vector2 location;
+        location.x = this.transform.position.x;
+        location.y = this.transform.position.y;
         Vector3 velocity = _controller.velocity;
         Vector3 direction = Camera.main.ScreenToWorldPoint(Input.mousePosition) - this.transform.position;
         direction.z = 0;
@@ -27,16 +29,14 @@ public class LightController : MonoBehaviour {
         {
             direction = direction.normalized;
         }
-        //if (velocity.magnitude > 1)
-        //{
-            //velocity = velocity.normalized;
-        //}
-        //velocity.x *= velocity.x;
-        //velocity.y *= velocity.y;        
-        //if (velocity.x > 2) velocity.x = 2;
-        //else if (velocity.x < -2) velocity.x = -2;
-        //if (velocity.y > 2) velocity.y = 2;
-        //direction.x += velocity.x;
-        _controller.move(direction/* * Time.deltaTime*/);
+        Vector3 viewPos = Camera.main.WorldToViewportPoint(this.transform.position);
+        if (viewPos.z > 0 && viewPos.x > 0 && viewPos.x < 1 && viewPos.y > 0 && viewPos.y < 1)
+        {
+            _controller.move(direction);
+        }
+        else
+        {
+            this.transform.position += direction;
+        }
     }
 }
