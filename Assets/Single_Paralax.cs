@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Single_Paralax : MonoBehaviour {
-
+	
 	// Use this for initialization
 	void Start () {
 	
@@ -10,6 +10,5 @@ public class Single_Paralax : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
 	}
 }

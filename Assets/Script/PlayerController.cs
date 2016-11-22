@@ -138,7 +138,7 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetAxis("Jump") > 0 && _controller.isGrounded)
         {
             velocity.y = Mathf.Sqrt(2f * jumpHeight * -gravity);
-            //_animator.setAnimation("JumpAnimation");
+            _animator.setAnimation("Jump");
         }
         
         velocity.y += gravity * Time.deltaTime;
