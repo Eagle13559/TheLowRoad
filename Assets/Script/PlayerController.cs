@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour {
     public GameObject gameOverPanel;
     public GameObject levelWinPanel;
 
+    public bool spawnMonster = true;
+
     private CharacterController2D _controller;
     private AnimationController2D _animator;
 
@@ -47,6 +49,8 @@ public class PlayerController : MonoBehaviour {
     {
         if (!playerControl) return;
         _controller.move(PlayerInputFunction() * Time.deltaTime);
+
+        if (!spawnMonster) return;
 
         if (timer > 20)
         {

@@ -10,6 +10,7 @@ public class MovingPlatform : MonoBehaviour {
     private Vector3 startPostion = Vector3.zero;
     private bool outgoing = true;
     public bool moving = true;
+    public bool continuous = true;
 
 	// Use this for initialization
 	void Start () {
@@ -32,6 +33,7 @@ public class MovingPlatform : MonoBehaviour {
 
         if (timer > 1)
         {
+            if (!continuous) moving = false;
             outgoing = !outgoing;
             timer = 0;
         }

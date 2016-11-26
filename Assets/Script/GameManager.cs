@@ -32,6 +32,17 @@ public class GameManager : MonoBehaviour {
         Application.LoadLevel(0);
     }
 
+    public void nextLevel()
+    {
+        int currentLevel = Application.loadedLevel;
+        Application.LoadLevel(++currentLevel);
+    }
+
+    public void jumpToLevel(int level_)
+    {
+        Application.LoadLevel(level_);
+    }
+
     public void exitGame()
     {
         Application.Quit();
