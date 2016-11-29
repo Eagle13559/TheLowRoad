@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour {
 
     public void startLevel()
     {
-        Application.LoadLevel(1);
+        Application.LoadLevel(0);
     }
 
     public void restartLevel()
@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour {
 
     public void exitLevel()
     {
-        Application.LoadLevel(0);
+        Application.LoadLevel(3);
     }
 
     public void nextLevel()
