@@ -1,0 +1,171 @@
+fileFormatVersion: 2
+guid: 33be7fde0c3803645b314e039f55edbe
+timeCreated: 1480918692
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Low Road Kid JUMP purple_0
+    21300002: Low Road Kid JUMP purple_1
+    21300004: Low Road Kid JUMP purple_2
+    21300006: Low Road Kid JUMP purple_3
+    21300008: Low Road Kid JUMP purple_4
+    21300010: Low Road Kid JUMP purple_5
+    21300012: Low Road Kid JUMP purple_6
+    21300014: Low Road Kid JUMP purple_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Low Road Kid JUMP purple_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 2
+        width: 247
+        height: 1021
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid JUMP purple_1
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 1
+        width: 261
+        height: 1023
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid JUMP purple_2
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 4
+        width: 269
+        height: 1020
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid JUMP purple_3
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 2
+        width: 274
+        height: 1021
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid JUMP purple_4
+      rect:
+        serializedVersion: 2
+        x: 1202
+        y: 8
+        width: 325
+        height: 1013
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid JUMP purple_5
+      rect:
+        serializedVersion: 2
+        x: 1548
+        y: 4
+        width: 322
+        height: 1017
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid JUMP purple_6
+      rect:
+        serializedVersion: 2
+        x: 1887
+        y: 4
+        width: 299
+        height: 1019
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Low Road Kid JUMP purple_7
+      rect:
+        serializedVersion: 2
+        x: 2197
+        y: 2
+        width: 251
+        height: 1022
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
