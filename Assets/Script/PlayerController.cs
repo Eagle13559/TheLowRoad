@@ -18,13 +18,18 @@ public class PlayerController : MonoBehaviour {
     public GameObject stalkingMonster;
     public AudioSource monsterAudioRight;
     public AudioSource monsterAudioLeft;
+    public AudioSource center;
     public AudioClip monsterGrowlFar;
     public AudioClip monsterGrowlClose;
+    public AudioClip monsterRoar;
+    public AudioClip death;
 
     public GameObject gameOverPanel;
     public GameObject levelWinPanel;
 
     public bool spawnMonster = true;
+    public Component label;
+    private string Text;
 
     private CharacterController2D _controller;
     private AnimationController2D _animator;
@@ -54,9 +59,13 @@ public class PlayerController : MonoBehaviour {
 
         if (timer > 20)
         {
-            GameObject monster = Instantiate(stalkingMonster) as GameObject;
-            if (isFacingRight) monster.transform.position = (new Vector3(this.transform.position.x - 5, this.transform.position.y + 10, this.transform.position.z));
-            else monster.transform.position = (new Vector3(this.transform.position.x + 5, this.transform.position.y + 10, this.transform.position.z));
+            //GameObject monster = Instantiate(stalkingMonster) as GameObject;
+            //if (isFacingRight) monster.transform.position = (new Vector3(this.transform.position.x - 5, this.transform.position.y + 10, this.transform.position.z));
+            //else monster.transform.position = (new Vector3(this.transform.position.x + 5, this.transform.position.y + 10, this.transform.position.z));
+            center.PlayOneShot(monsterRoar, 1f);
+            //monsterAudioRight.PlayOneShot(monsterRoar, 1f);
+            Text = "'He' has claimed you. Don't stand still for too long.\nRemember you are safe in light.";
+            PlayerDeath();
             timer = 0;
         }
 
@@ -79,11 +88,13 @@ public class PlayerController : MonoBehaviour {
     {
         if (col.tag == "KillZ")
         {
+            Text = "You fell.\nRemember to use your light to check for pitfalls.";
             gameCamera.GetComponent<CameraFollow2D>().stopCameraFollow();
             PlayerDeath();
         }
         else if (col.tag == "EvilDoer")
         {
+            Text = "You ran into an enemy.\nUse your light to check what's in front of you.";
             PlayerDeath();
         }
         else if (col.tag == "Checkpoint")
@@ -152,6 +163,8 @@ public class PlayerController : MonoBehaviour {
 
     private void PlayerDeath()
     {
+        center.PlayOneShot(death, 1.0f);
+        label.GetComponent<Text>().text = Text;
         playerControl = false;
         //_animator.setAnimation("DeathAnimation");
         gameOverPanel.SetActive(true);

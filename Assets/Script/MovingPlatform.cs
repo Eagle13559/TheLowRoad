@@ -11,6 +11,7 @@ public class MovingPlatform : MonoBehaviour {
     private bool outgoing = true;
     public bool moving = true;
     public bool continuous = true;
+    private bool hasMoved = false;
 
 	// Use this for initialization
 	void Start () {
@@ -26,14 +27,14 @@ public class MovingPlatform : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (!moving) return;
+        if ((!moving) || hasMoved) return;
         timer += Time.deltaTime * speed;
         if (outgoing) this.transform.position = Vector3.Lerp(startPostion, endPosition, timer);            
         else this.transform.position = Vector3.Lerp(endPosition, startPostion, timer);
 
         if (timer > 1)
         {
-            if (!continuous) moving = false;
+            if (!continuous) { moving = false; hasMoved = true; }
             outgoing = !outgoing;
             timer = 0;
         }
