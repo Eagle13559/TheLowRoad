@@ -3,7 +3,8 @@ using System.Collections;
 
 public class SwitchController : MonoBehaviour {
 
-    public Light light;
+    //public Light light;
+    public Sprite onState;
     public GameObject platformToMoveOnTrigger;
     public GameObject platformToMoveOnTrigger2;
 
@@ -42,8 +43,9 @@ public class SwitchController : MonoBehaviour {
     {
         if (col.tag == "Firefly")
         {
-            light.color = Color.green;
+            //light.color = Color.green;
             //isTriggered = true;
+            GetComponent<SpriteRenderer>().sprite = onState;
             platform.moving = true;
             platform2.moving = true;
         }

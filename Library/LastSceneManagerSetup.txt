@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scene/tutorial.unity
+- path: Assets/Scene/Shredded Wheat.unity
   isLoaded: 1
   isActive: 1

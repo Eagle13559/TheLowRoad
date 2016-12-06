@@ -15,6 +15,7 @@ public class UnassumingLampController : MonoBehaviour
     public float rovingPauseTime;
     public float playerDetectionDistance;
     public float visionMaxHeight;
+    public AudioSource scream;
 
     private float timer = 0;
     private Vector3 startPostion = Vector3.zero;
@@ -47,6 +48,7 @@ public class UnassumingLampController : MonoBehaviour
             (((playerPosition.x > this.transform.position.x - playerDetectionDistance) && (playerPosition.x < this.transform.position.x)) && !isFacingRight)) &&
             ((playerPosition.y < this.transform.position.y + visionMaxHeight) && (playerPosition.y > this.transform.position.y - visionMaxHeight)) )
         {
+            if (seesPlayer == false) scream.PlayOneShot(scream.clip, 1.0f);
             seesPlayer = true;
         }
         else seesPlayer = false;
