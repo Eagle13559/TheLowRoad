@@ -71,15 +71,15 @@ public class PlayerController : MonoBehaviour {
 
         else if ((timer > 14) && (timer < 15))
         {
-            if (isFacingRight) monsterAudioLeft.PlayOneShot(monsterGrowlClose, 0.75f);
-            else monsterAudioRight.PlayOneShot(monsterGrowlClose, 0.75f);
+            if (isFacingRight) monsterAudioLeft.PlayOneShot(monsterGrowlClose, 1.0f);
+            else monsterAudioRight.PlayOneShot(monsterGrowlClose, 1.0f);
             timer += 1;
         }
 
         else if ((timer > 8) && (timer < 9))
         {
-            if (isFacingRight) monsterAudioLeft.PlayOneShot(monsterGrowlFar, 0.5f);
-            else monsterAudioRight.PlayOneShot(monsterGrowlFar, 0.5f);
+            if (isFacingRight) monsterAudioLeft.PlayOneShot(monsterGrowlFar, 1.0f);
+            else monsterAudioRight.PlayOneShot(monsterGrowlFar, 1.0f);
             timer += 1;
         }
     }
